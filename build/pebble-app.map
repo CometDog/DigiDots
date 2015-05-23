@@ -1,7 +1,7 @@
 Archive member included because of file (symbol)
 
 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
-                              src/main.c.18.o (accel_tap_service_subscribe)
+                              src/main.c.22.o (accel_tap_service_subscribe)
 
 Discarded input sections
 
@@ -17,10 +17,10 @@ Discarded input sections
  .jcr           0x0000000000000000        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .tm_clone_table
                 0x0000000000000000        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
- .text          0x0000000000000000        0x0 src/main.c.18.o
- .bss           0x0000000000000000        0x0 src/main.c.18.o
- .text          0x0000000000000000        0x0 aplite/appinfo.auto.c.18.o
- .bss           0x0000000000000000        0x0 aplite/appinfo.auto.c.18.o
+ .text          0x0000000000000000        0x0 src/main.c.22.o
+ .bss           0x0000000000000000        0x0 src/main.c.22.o
+ .text          0x0000000000000000        0x0 aplite/appinfo.auto.c.22.o
+ .bss           0x0000000000000000        0x0 aplite/appinfo.auto.c.22.o
  .bss           0x0000000000000000        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
  .text.accel_data_service_subscribe__deprecated
                 0x0000000000000000        0xc /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
@@ -657,8 +657,8 @@ Linker script and memory map
 
 LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
 LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
-LOAD src/main.c.18.o
-LOAD aplite/appinfo.auto.c.18.o
+LOAD src/main.c.22.o
+LOAD aplite/appinfo.auto.c.22.o
 LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a
 START GROUP
 LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/libgcc.a
@@ -669,7 +669,7 @@ LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/ar
 
 .header         0x0000000000000000       0x82
  *(.pbl_header)
- .pbl_header    0x0000000000000000       0x82 aplite/appinfo.auto.c.18.o
+ .pbl_header    0x0000000000000000       0x82 aplite/appinfo.auto.c.22.o
                 0x0000000000000000                __pbl_app_info
 
 .note.gnu.build-id
@@ -685,28 +685,28 @@ LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/ar
  .text          0x00000000000000a8       0x14 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
  *(.text.*)
  .text.bt_handler
-                0x00000000000000bc        0xa src/main.c.18.o
+                0x00000000000000bc        0xa src/main.c.22.o
  *fill*         0x00000000000000c6        0x2 
  .text.do_animation
-                0x00000000000000c8       0x88 src/main.c.18.o
+                0x00000000000000c8       0x88 src/main.c.22.o
  .text.timer_callback
-                0x0000000000000150       0x20 src/main.c.18.o
+                0x0000000000000150       0x20 src/main.c.22.o
  .text.tick_handler
-                0x0000000000000170       0x10 src/main.c.18.o
+                0x0000000000000170       0x10 src/main.c.22.o
  .text.main_window_unload
-                0x0000000000000180       0x40 src/main.c.18.o
+                0x0000000000000180       0x40 src/main.c.22.o
  .text.main_window_load
-                0x00000000000001c0       0xbc src/main.c.18.o
+                0x00000000000001c0       0xbc src/main.c.22.o
  .text.update_sleep
-                0x000000000000027c       0x64 src/main.c.18.o
+                0x000000000000027c       0x64 src/main.c.22.o
  .text.update_time
-                0x00000000000002e0      0x240 src/main.c.18.o
+                0x00000000000002e0      0x240 src/main.c.22.o
  .text.update_bg
-                0x0000000000000520       0xf0 src/main.c.18.o
+                0x0000000000000520       0xf0 src/main.c.22.o
  .text.tap_handler
-                0x0000000000000610       0x54 src/main.c.18.o
+                0x0000000000000610       0x54 src/main.c.22.o
  .text.startup.main
-                0x0000000000000664       0x90 src/main.c.18.o
+                0x0000000000000664       0x90 src/main.c.22.o
                 0x0000000000000664                main
  .text.accel_tap_service_subscribe
                 0x00000000000006f4        0xc /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
@@ -815,7 +815,7 @@ LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/ar
                 0x0000000000000898        0xc /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
                 0x0000000000000898                window_stack_push
  *(.rodata)
- .rodata        0x00000000000008a4       0x20 src/main.c.18.o
+ .rodata        0x00000000000008a4       0x20 src/main.c.22.o
  *(.rodata*)
 
 .glue_7         0x00000000000008c4        0x0
@@ -841,14 +841,14 @@ LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/ar
  .data          0x00000000000008c4        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crti.o
  .data          0x00000000000008c4        0x4 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
                 0x00000000000008c4                __dso_handle
- .data          0x00000000000008c8        0x0 src/main.c.18.o
- .data          0x00000000000008c8        0x0 aplite/appinfo.auto.c.18.o
+ .data          0x00000000000008c8        0x0 src/main.c.22.o
+ .data          0x00000000000008c8        0x0 aplite/appinfo.auto.c.22.o
  .data          0x00000000000008c8        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
  .data          0x00000000000008c8        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
  .data          0x00000000000008c8        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtn.o
  *(.data.*)
  .data.first_run
-                0x00000000000008c8        0x1 src/main.c.18.o
+                0x00000000000008c8        0x1 src/main.c.22.o
 
 .igot.plt       0x00000000000008cc        0x0
  .igot.plt      0x0000000000000000        0x0 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
@@ -857,35 +857,35 @@ LOAD /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/ar
  *(.bss)
  *(.bss.*)
  .bss.s_background_layer
-                0x00000000000008cc        0x4 src/main.c.18.o
+                0x00000000000008cc        0x4 src/main.c.22.o
  .bss.s_sleep_animation
-                0x00000000000008d0        0x4 src/main.c.18.o
- .bss.sleep     0x00000000000008d4        0x1 src/main.c.18.o
- .bss.second1   0x00000000000008d5        0x1 src/main.c.18.o
- .bss.hour_24   0x00000000000008d6        0x1 src/main.c.18.o
- .bss.row       0x00000000000008d7        0x6 src/main.c.18.o
+                0x00000000000008d0        0x4 src/main.c.22.o
+ .bss.sleep     0x00000000000008d4        0x1 src/main.c.22.o
+ .bss.second1   0x00000000000008d5        0x1 src/main.c.22.o
+ .bss.hour_24   0x00000000000008d6        0x1 src/main.c.22.o
+ .bss.row       0x00000000000008d7        0x6 src/main.c.22.o
  *fill*         0x00000000000008dd        0x3 
  .bss.s_time_layer
-                0x00000000000008e0        0x4 src/main.c.18.o
- .bss.second2   0x00000000000008e4        0x1 src/main.c.18.o
- .bss.X         0x00000000000008e5        0x1 src/main.c.18.o
- .bss.minute1   0x00000000000008e6        0x1 src/main.c.18.o
- .bss.minute2   0x00000000000008e7        0x1 src/main.c.18.o
+                0x00000000000008e0        0x4 src/main.c.22.o
+ .bss.second2   0x00000000000008e4        0x1 src/main.c.22.o
+ .bss.X         0x00000000000008e5        0x1 src/main.c.22.o
+ .bss.minute1   0x00000000000008e6        0x1 src/main.c.22.o
+ .bss.minute2   0x00000000000008e7        0x1 src/main.c.22.o
  .bss.do_reverse
-                0x00000000000008e8        0x1 src/main.c.18.o
- .bss.hour1     0x00000000000008e9        0x1 src/main.c.18.o
- .bss.hour2     0x00000000000008ea        0x1 src/main.c.18.o
- .bss.Y         0x00000000000008eb        0x1 src/main.c.18.o
- .bss.sleeping  0x00000000000008ec        0x1 src/main.c.18.o
- .bss.hour      0x00000000000008ed        0x1 src/main.c.18.o
+                0x00000000000008e8        0x1 src/main.c.22.o
+ .bss.hour1     0x00000000000008e9        0x1 src/main.c.22.o
+ .bss.hour2     0x00000000000008ea        0x1 src/main.c.22.o
+ .bss.Y         0x00000000000008eb        0x1 src/main.c.22.o
+ .bss.sleeping  0x00000000000008ec        0x1 src/main.c.22.o
+ .bss.hour      0x00000000000008ed        0x1 src/main.c.22.o
  *fill*         0x00000000000008ee        0x2 
- .bss.timer     0x00000000000008f0        0x4 src/main.c.18.o
- .bss.column    0x00000000000008f4        0x1 src/main.c.18.o
+ .bss.timer     0x00000000000008f0        0x4 src/main.c.22.o
+ .bss.column    0x00000000000008f4        0x1 src/main.c.22.o
  *fill*         0x00000000000008f5        0x3 
  .bss.s_main_window
-                0x00000000000008f8        0x4 src/main.c.18.o
+                0x00000000000008f8        0x4 src/main.c.22.o
  .bss.s_sleep_layer
-                0x00000000000008fc        0x4 src/main.c.18.o
+                0x00000000000008fc        0x4 src/main.c.22.o
 
 DISCARD
  libc.a(*)
@@ -901,9 +901,9 @@ OUTPUT(/Users/James/Development Workspaces/Pebble/DigiDots/build/aplite/pebble-a
  .ARM.attributes
                 0x0000000000000019       0x29 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
  .ARM.attributes
-                0x0000000000000042       0x33 src/main.c.18.o
+                0x0000000000000042       0x33 src/main.c.22.o
  .ARM.attributes
-                0x0000000000000075       0x33 aplite/appinfo.auto.c.18.o
+                0x0000000000000075       0x33 aplite/appinfo.auto.c.22.o
  .ARM.attributes
                 0x00000000000000a8       0x21 /Users/James/pebble-dev/PebbleSDK-3.0-beta12/Pebble/aplite/lib/libpebble.a(tmpl57WfEpebble.o)
  .ARM.attributes
@@ -914,39 +914,39 @@ OUTPUT(/Users/James/Development Workspaces/Pebble/DigiDots/build/aplite/pebble-a
 .comment        0x0000000000000000       0x4e
  .comment       0x0000000000000000       0x4e /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtbegin.o
                                          0x4f (size before relaxing)
- .comment       0x0000000000000000       0x4f src/main.c.18.o
- .comment       0x0000000000000000       0x4f aplite/appinfo.auto.c.18.o
+ .comment       0x0000000000000000       0x4f src/main.c.22.o
+ .comment       0x0000000000000000       0x4f aplite/appinfo.auto.c.22.o
  .comment       0x0000000000000000       0x4f /Users/James/pebble-dev/PebbleSDK-3.0-beta12/arm-cs-tools/bin/../lib/gcc/arm-none-eabi/4.7.2/thumb2/crtend.o
 
-.debug_info     0x0000000000000000     0x1635
- .debug_info    0x0000000000000000     0x1300 src/main.c.18.o
- .debug_info    0x0000000000001300      0x335 aplite/appinfo.auto.c.18.o
+.debug_info     0x0000000000000000     0x163b
+ .debug_info    0x0000000000000000     0x1300 src/main.c.22.o
+ .debug_info    0x0000000000001300      0x33b aplite/appinfo.auto.c.22.o
 
 .debug_abbrev   0x0000000000000000      0x3c2
- .debug_abbrev  0x0000000000000000      0x324 src/main.c.18.o
- .debug_abbrev  0x0000000000000324       0x9e aplite/appinfo.auto.c.18.o
+ .debug_abbrev  0x0000000000000000      0x324 src/main.c.22.o
+ .debug_abbrev  0x0000000000000324       0x9e aplite/appinfo.auto.c.22.o
 
 .debug_loc      0x0000000000000000      0x347
- .debug_loc     0x0000000000000000      0x347 src/main.c.18.o
+ .debug_loc     0x0000000000000000      0x347 src/main.c.22.o
 
 .debug_aranges  0x0000000000000000       0x88
  .debug_aranges
-                0x0000000000000000       0x70 src/main.c.18.o
+                0x0000000000000000       0x70 src/main.c.22.o
  .debug_aranges
-                0x0000000000000070       0x18 aplite/appinfo.auto.c.18.o
+                0x0000000000000070       0x18 aplite/appinfo.auto.c.22.o
 
 .debug_ranges   0x0000000000000000       0x60
- .debug_ranges  0x0000000000000000       0x60 src/main.c.18.o
+ .debug_ranges  0x0000000000000000       0x60 src/main.c.22.o
 
 .debug_line     0x0000000000000000      0x4d6
- .debug_line    0x0000000000000000      0x397 src/main.c.18.o
- .debug_line    0x0000000000000397      0x13f aplite/appinfo.auto.c.18.o
+ .debug_line    0x0000000000000000      0x397 src/main.c.22.o
+ .debug_line    0x0000000000000397      0x13f aplite/appinfo.auto.c.22.o
 
-.debug_str      0x0000000000000000      0xd0b
- .debug_str     0x0000000000000000      0xab3 src/main.c.18.o
+.debug_str      0x0000000000000000      0xd1c
+ .debug_str     0x0000000000000000      0xab3 src/main.c.22.o
                                         0xb60 (size before relaxing)
- .debug_str     0x0000000000000ab3      0x258 aplite/appinfo.auto.c.18.o
-                                        0x348 (size before relaxing)
+ .debug_str     0x0000000000000ab3      0x269 aplite/appinfo.auto.c.22.o
+                                        0x359 (size before relaxing)
 
 .debug_frame    0x0000000000000000      0x150
- .debug_frame   0x0000000000000000      0x150 src/main.c.18.o
+ .debug_frame   0x0000000000000000      0x150 src/main.c.22.o

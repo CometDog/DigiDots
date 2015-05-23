@@ -7,7 +7,14 @@
     "longName": "DigiDots",
     "projectType": "native",
     "resources": {
-        "media": []
+        "media": [
+            {
+                "menuIcon": true,
+                "type": "png",
+                "name": "ICON",
+                "file": "images/icon.png"
+            }
+        ]
     },
     "sdkVersion": "3",
     "shortName": "DigiDots",
