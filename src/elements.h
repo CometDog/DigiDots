@@ -1,6 +1,8 @@
 static Window *s_main_window;
 static Layer *s_background_layer, *s_time_layer, *s_sleep_layer;
 
+static AppTimer *timer = NULL;
+
 static int8_t Y;
 static int8_t X;
 static int8_t column;
@@ -16,5 +18,9 @@ static int8_t second1;
 static int8_t second2;
 
 static bool sleep;
+static bool sleeping;
+static bool first_run = true;
 
 static int8_t bat;
+
+static void timer_callback(void *data);

@@ -122,14 +122,29 @@ static void update_time(Layer *layer, GContext *ctx) {
       X += 15;
     }
   }
+  
+  if (sleep == true && first_run == true) {
+    timer = app_timer_register(10 * 1000, timer_callback, NULL);
+    first_run = false;
+  }
 }
 
 static void update_sleep(Layer *layer, GContext *ctx) {
+  graphics_context_set_fill_color(ctx, GColorBlack);
+  
+  graphics_fill_rect(ctx, GRect(0,0,144,168), GCornerNone, 0);
+  
   #ifdef PBL_COLOR
     graphics_context_set_fill_color(ctx, GColorDarkGray);
   #else
-    graphics_context_set_stroke_color(ctx, GColorWhite);
+    graphics_context_set_fill_color(ctx, GColorWhite);
   #endif
+  
+  graphics_fill_circle(ctx, GPoint(69,65), 64);
+  
+  graphics_context_set_fill_color(ctx, GColorBlack);
+  
+  graphics_fill_circle(ctx, GPoint(38, 45), 48);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -145,6 +160,20 @@ static void bt_handler(bool connected) {
   }
 }
 
+static void timer_callback(void *data) {
+  if (sleep == true) {
+    layer_show(s_sleep_layer);
+  }
+}
+
+static void tap_handler(AccelAxisType axis, int32_t direction) {
+  layer_hide(s_sleep_layer);
+  if (sleep == true) {
+    app_timer_cancel(timer);
+    timer = app_timer_register(10 * 1000, timer_callback, NULL);
+  }
+}
+
 static void main_window_load(Window *window) {
   GRect bounds = GRect(0,19,144,168);
   
@@ -156,9 +185,8 @@ static void main_window_load(Window *window) {
   layer_set_update_proc(s_background_layer, update_bg);
   layer_set_update_proc(s_time_layer, update_time);
   
-  if (sleep == true) {
-    layer_set_update-proc(s_sleep_layer, update_sleep);
-  }
+  layer_set_update_proc(s_sleep_layer, update_sleep);
+  layer_hide(s_sleep_layer);
   
   layer_add_to_window(s_background_layer, window);
   layer_add_to_window(s_time_layer, window);
@@ -177,10 +205,12 @@ static void init() {
   window_stack_push(s_main_window, true);
   
   tick_timer_service_subscribe(SECOND_UNIT, tick_handler);
+  accel_tap_service_subscribe(tap_handler);
   bluetooth_connection_service_subscribe(bt_handler);
 }
 
 static void deinit() {
+  accel_tap_service_unsubscribe();
   bluetooth_connection_service_unsubscribe();
   window_destroy_safe(s_main_window);
 }
