@@ -4,13 +4,13 @@
         ""
     ],
     "companyName": "James Downs",
-    "longName": "Spotted",
+    "longName": "DigiDots",
     "projectType": "native",
     "resources": {
         "media": []
     },
     "sdkVersion": "3",
-    "shortName": "Spotted",
+    "shortName": "DigiDots",
     "targetPlatforms": [
         "aplite",
         "basalt"
