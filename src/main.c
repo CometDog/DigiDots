@@ -234,6 +234,7 @@ static void init() {
 }
 
 static void deinit() {
+  animation_unschedule_all();
   accel_tap_service_unsubscribe();
   bluetooth_connection_service_unsubscribe();
   window_destroy_safe(s_main_window);
