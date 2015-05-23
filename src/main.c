@@ -5,6 +5,26 @@
 #include "libs/pebble-assist.h"
 #include "elements.h"
 
+static void do_animation() {
+  GRect start, finish;
+  
+  start = GRect(72, 84, 0, 0);
+  finish = GRect(0, 0, 144, 168);
+  
+  if (do_reverse == true) {
+    s_sleep_animation = property_animation_create_layer_frame(s_sleep_layer, &finish, &start);
+  }
+  else {
+    s_sleep_animation = property_animation_create_layer_frame(s_sleep_layer, &start, &finish);
+  }
+  animation_set_duration((Animation*)s_sleep_animation, ANIM_DURATION);
+  animation_set_delay((Animation*)s_sleep_animation, ANIM_DELAY);
+  animation_set_curve((Animation*)s_sleep_animation, AnimationCurveEaseOut);
+  animation_schedule((Animation*)s_sleep_animation);
+
+}
+
+
 static void update_bg(Layer *layer, GContext *ctx) {
   X = 19;
   column = 0;
@@ -55,7 +75,7 @@ static void update_time(Layer *layer, GContext *ctx) {
   #endif
   
   hour_24 = t->tm_hour;
-  
+
   if (hour_24 >= 22 || hour_24 <= 6) {
     sleep = true;
   }
@@ -135,16 +155,16 @@ static void update_sleep(Layer *layer, GContext *ctx) {
   graphics_fill_rect(ctx, GRect(0,0,144,168), GCornerNone, 0);
   
   #ifdef PBL_COLOR
-    graphics_context_set_fill_color(ctx, GColorDarkGray);
+    graphics_context_set_fill_color(ctx, GColorBlueMoon);
   #else
     graphics_context_set_fill_color(ctx, GColorWhite);
   #endif
   
-  graphics_fill_circle(ctx, GPoint(69,65), 64);
+  graphics_fill_circle(ctx, GPoint(69,84), 64);
   
   graphics_context_set_fill_color(ctx, GColorBlack);
   
-  graphics_fill_circle(ctx, GPoint(38, 45), 48);
+  graphics_fill_circle(ctx, GPoint(38, 64), 48);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
@@ -162,12 +182,17 @@ static void bt_handler(bool connected) {
 
 static void timer_callback(void *data) {
   if (sleep == true) {
-    layer_show(s_sleep_layer);
+    do_animation();
+    sleeping = true;
   }
 }
 
 static void tap_handler(AccelAxisType axis, int32_t direction) {
-  layer_hide(s_sleep_layer);
+  if (sleeping == true) {
+    do_reverse = true;
+    do_animation();
+    do_reverse = false;
+  }
   if (sleep == true) {
     app_timer_cancel(timer);
     timer = app_timer_register(10 * 1000, timer_callback, NULL);
@@ -181,12 +206,11 @@ static void main_window_load(Window *window) {
   
   s_background_layer = layer_create(bounds);
   s_time_layer = layer_create(bounds);
-  s_sleep_layer = layer_create(bounds);
+  s_sleep_layer = layer_create(GRect(72,84,0,0));
   layer_set_update_proc(s_background_layer, update_bg);
   layer_set_update_proc(s_time_layer, update_time);
   
   layer_set_update_proc(s_sleep_layer, update_sleep);
-  layer_hide(s_sleep_layer);
   
   layer_add_to_window(s_background_layer, window);
   layer_add_to_window(s_time_layer, window);
