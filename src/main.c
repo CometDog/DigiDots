@@ -70,7 +70,7 @@ static void update_time(Layer *layer, GContext *ctx) {
     hour = hour_24 % 12;
   }
   
-  if (clock_is_24h_style() == false && hour == 12) {
+  if (clock_is_24h_style() == false && (hour == 12 || hour == 0)) {
     hour1 = 1;
     hour2 = 2;
   }
